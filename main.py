@@ -79,9 +79,9 @@ def think(wordsString, totalSpam, totalHam, spamWords, hamWords):
         pSWords.append(pSW)
         pHWords.append(pHW)
 
-    pSResult = reduce(lambda x, y: x * y, pSWords) * pSW
-    pHResult = reduce(lambda x, y: x * y, pHWords) * pHW
-
+    pSResult = reduce(lambda x, y: x + y, pSWords) / len(pSWords)
+    pHResult = reduce(lambda x, y: x + y, pHWords) / len(pHWords)
+    print(pSResult, pHResult)
     if (pSResult > pHResult):
         print("Spam")
     if (pSResult < pHResult):
