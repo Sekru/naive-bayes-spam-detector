@@ -48,3 +48,7 @@ def thinkEndpoint():
         return json.dumps({"pSResult": pSResult, "pHResult": pHResult}), 200, {'ContentType':'application/json'}
     except:
         abort(500)    
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host = '0.0.0.0',port=5000)
